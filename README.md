@@ -1,6 +1,8 @@
 # Elliptic Real Bitcoin AML ML
 
-Standalone PyCharm project for the real, anonymized Elliptic Bitcoin transaction graph. The baseline compares class-weighted logistic regression and random forest classifiers using published node features and a strict blockchain-time split.
+Standalone PyCharm project for the real, anonymized Elliptic Bitcoin transaction graph. The experiment
+compares class-weighted logistic regression, random forest, and XGBoost using published node features and
+a strict blockchain-time split.
 
 ## Dataset
 
@@ -56,7 +58,10 @@ Weber, M. et al., “Anti-Money Laundering in Bitcoin: Experimenting with Graph 
 
 ## Current trained result
 
-Random forest was selected. On labelled nodes from later blockchain time steps 42–49 it achieved PR-AUC **0.5467**, ROC-AUC **0.8626**, precision **0.9183**, recall **0.4681**, and F1 **0.6201**. The reduction from validation PR-AUC 0.9289 is reported as temporal distribution shift, not hidden by random splitting.
+XGBoost was selected with validation PR-AUC **0.9321**. On labelled nodes from later blockchain time steps
+42–49 it achieved PR-AUC **0.5533**, ROC-AUC **0.8463**, precision **0.8818**, recall **0.4755**, and F1
+**0.6178**. The large reduction from validation performance is reported as temporal distribution shift,
+not hidden by random splitting.
 
 ![Elliptic model comparison](outputs/model_comparison.png)
 
